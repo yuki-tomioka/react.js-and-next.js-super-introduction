@@ -24,11 +24,11 @@
 
 
     function doCount(){
-        counter++;
         let element = React.createElement(
             'p', {}, "count: " + counter
         );
         ReactDOM.render(element, dom);
+        counter++;
     }
 </script>
 </body>
