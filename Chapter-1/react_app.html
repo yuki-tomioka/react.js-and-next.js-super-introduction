@@ -16,12 +16,12 @@
 </head>
 <body>
 <h1>React</h1>
-<div id="root" onclick="doCount();">wait...</div>
+<div id="root">wait...</div>
 <script>
     let counter = 0;
     let dom = document.querySelector('#root');
+    dom.addEventListener('click', doCount);
     doCount();
-
 
     function doCount(){
         let element = React.createElement(
