@@ -16,11 +16,16 @@
   let title = "新しいタイトル";
   let message = "新しいメッセージです。";
   let link = "https://google.com";
+  const msg_s = {
+      fontSize: "20pt",
+      color: "red",
+      border: "1px solid blue"
+  }
 
   let el = (
       <div>
         <h2>{title}</h2>
-        <p>{message}</p>
+        <p style={msg_s}>{message}</p>
         <p><a href={link}>this is link!</a></p>
       </div>
   );
