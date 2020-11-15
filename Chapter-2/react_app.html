@@ -16,20 +16,31 @@
   const p = {
       fontSize: "20pt",
       padding: "10px",
-      backgroundColor: "blue",
-      color: "white",
-      cursor: "pointer",
   };
 
-  let counter = 0;
+  const input = {
+      fontSize: "16pt",
+      padding: "5px 10px",
+  };
+
+  let message = "お名前をどうそ：";
+  let in_val = "";
+
+  let doChange = (event) => {
+      in_val = event.target.value;
+      message = "こんにちは、" + in_val + "さん！！";
+  };
 
   let doAction = (event) => {
       let el = (
           <div>
-              <p style={p} onClick={doAction}>count: {counter}</p>
+              <p style={p}>{message}</p>
+              <input type="text" id="input" style={input} onChange={doChange}/>
+              <button onClick={doAction} style={input}>
+                Click
+              </button>
           </div>
       );
-      counter++;
       ReactDOM.render(el, dom);
   };
 
