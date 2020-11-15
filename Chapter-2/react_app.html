@@ -13,48 +13,21 @@
 <script type="text/babel">
   let dom = document.querySelector('#root');
 
-  const dfn = {
+  const p = {
       fontSize: "20pt",
       padding: "10px",
   };
 
-  const dt = {
-      fontSize: "16pt",
-      color: "white",
-      backgroundColor: "#006",
-      padding: "10px",
-  };
-
-  const dd = {
-      color: "black",
-      padding: "10px",
-  };
-
-  let data = {
-      url: "http://goolge.com",
-      title: "Google",
-      caption: "Googleの検索サイトです。",
-  };
-
-  let el = (
-      <div>
-          {(() =>
-              <dl>
-                <dt style={dt}><dfn style={dfn}>
-                    {data.title}
-                </dfn></dt>
-                <dd style={dd}>
-                    {data.caption}
-                </dd>
-                <dd style={dd}>
-                    <a href={data.url}>※{data.title}に移動</a>
-                </dd>
-              </dl>
-          )()}
-      </div>
-  );
-
-  ReactDOM.render(el, dom);
+  let counter = 0;
+  setInterval(() => {
+      let el = (
+          <div>
+            <p style={p}>count: {counter}</p>
+          </div>
+      );
+      counter++;
+      ReactDOM.render(el, dom);
+  }, 1000);
 </script>
 </body>
 </html>
